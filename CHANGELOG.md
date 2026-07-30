@@ -8,6 +8,25 @@ pre-1.0 so breaking changes may land in a MINOR bump).
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-07-30
+
+### Fixed
+- Upgrade card buttons on the level-up screen were unclickable. Root cause: `Hud`
+  is active at the same time as `LevelUpScreen` and, as the last sibling under
+  `Canvas`, rendered on top of it; its full-screen (but fully transparent) `Image`
+  still blocked `GraphicRaycaster` hits by default, silently swallowing every
+  click meant for the cards underneath. Fixed by setting `Hud`'s
+  `Image.raycastTarget = false` in `ProjectBootstrap.BuildUI` (`Assets/Editor/ProjectBootstrap.cs`).
+
+### Process notes
+- Added a PlayMode regression test (`FullPlaytestTests.cs`) that raycasts through
+  the real `EventSystem`/`GraphicRaycaster` at the upgrade card's screen position
+  and asserts the `Button` is the topmost hit. The prior test suite only ever
+  called `GameManager.ChooseUpgrade()` directly, bypassing the UI entirely, which
+  is why 55 EditMode + 1 PlayMode tests were all green despite the button being
+  unclickable in actual play. Verified the new test fails against the pre-fix
+  code (top hit: `Hud`) and passes after the fix.
+
 ## [0.1.0] - 2026-07-30
 
 ### Changed
