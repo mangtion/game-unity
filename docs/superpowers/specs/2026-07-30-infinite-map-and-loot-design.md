@@ -30,15 +30,22 @@
 
 ```
 GameManager.Update()
-  ├─ camera.transform.position ← Player.transform.position   (CameraFollow, 매 프레임)
-  ├─ bounds = RectAroundCamera(camera.position, ArenaWidth, ArenaHeight)   (기존 고정 bounds 대체)
+  ├─ bounds = RectAroundCamera(CameraTransform.position, ArenaWidth, ArenaHeight)   (기존 고정 bounds 대체)
   ├─ Spawner.Tick(dt, elapsed, bounds, transform)              (기존 그대로, bounds만 카메라 기준)
-  ├─ AmbientItemSpawner.Tick(dt, cameraRect, transform)        (신규)
-  └─ Player.Tick(dt)                                           (bounds clamp 제거, 시그니처 변경)
+  ├─ AmbientItemSpawner.Tick(dt, expandedBounds, transform)    (신규)
+  ├─ PlayerWeapon.FireInterval = Mathf.Max(
+  │      UpgradeEffects.EffectiveFireInterval(stacks) * Player.BuffFireIntervalMultiplier,
+  │      UpgradeEffects.MinFireInterval)                       (버프 배율 합성 지점, 기존 142번줄 확장)
+  └─ Player.Tick(dt)                                           (bounds clamp 제거, 시그니처 변경. 버프 타이머 감소도 내부에서 처리)
+
+CameraFollow (신규, Main Camera에 부착)
+  └─ LateUpdate: transform.position ← Player.transform.position (즉시 추적)
 
 InfiniteBackground (신규, 배경 Quad에 부착)
   └─ LateUpdate: 카메라가 타일 절반 이상 벗어나면 Quad를 재배치 + material.mainTextureOffset 보정
 ```
+
+**참조 배선**: `GameManager`에 `public Transform CameraTransform` 필드를 추가하고, `Player`/`Spawner`와 동일하게 `ProjectBootstrap.BuildMainScene`에서 Main Camera의 Transform을 연결한다. (검토 결과: 기존 코드에 Camera 참조가 전혀 없었고, 스펙 초안이 이 배선을 누락하고 있었음 — 싱글톤 패턴 대신 명시적 필드 주입을 택함, 기존 `Player`/`PlayerWeapon`/`Spawner` 필드와 일관성 유지)
 
 ## 컴포넌트별 설계
 
@@ -95,8 +102,25 @@ public class BuffItem : MonoBehaviour
 ```
 
 - `GameConfig`에 상수 추가: `HealFraction = 0.25f`(최대체력의 25% 회복 — 체력 업그레이드로 MaxHp가 커져도 항상 의미 있는 회복량이 되도록 비율 기반), `BuffFireIntervalMultiplier = 0.5f`, `BuffDuration = 12f`
-- **임시 버프 적용 방식**: `PlayerController`에 `float buffTimeRemaining`, `float buffFireIntervalMultiplier`(기본 1.0) 필드 추가. `Weapon`이 발사 간격을 계산할 때 이 배율을 곱해서 사용(정확한 연결 지점은 `Weapon.cs`/`UpgradeEffects.cs`의 기존 발사 간격 계산 코드 확인 후 배선). `PlayerController.Tick`에서 `buffTimeRemaining`을 감소시키다 0 이하가 되면 배율을 1.0으로 되돌림
+
+- **임시 버프 적용 방식 (검토로 확정, 초안의 모호한 서술 대체)**: `PlayerController`에 `float BuffTimeRemaining`, `float BuffFireIntervalMultiplier`(기본 1.0) 필드 추가.
+  - **배선 지점**: `GameManager.Update()`가 매 프레임 `PlayerWeapon.FireInterval = UpgradeEffects.EffectiveFireInterval(stacks)`로 덮어쓰고 있으므로(영구 업그레이드만 반영, 기존 142번줄), 버프는 반드시 **이 대입문 자체**에 합성해야 한다. 다른 지점(예: `Weapon.cs` 내부)에 버프 배율을 넣으면 매 프레임 이 대입문에 덮어써져 버프가 즉시 사라진다:
+    ```csharp
+    PlayerWeapon.FireInterval = Mathf.Max(
+        UpgradeEffects.EffectiveFireInterval(Player.UpgradeStacks) * Player.BuffFireIntervalMultiplier,
+        UpgradeEffects.MinFireInterval);
+    ```
+  - `UpgradeEffects.MinFireInterval`은 현재 `private const`이므로 `public const`으로 변경 (GameManager에서 재사용하기 위함)
+  - **바닥값 재적용 이유**: `EffectiveFireInterval`은 이미 0.05초로 clamp된 값이라, 여기에 버프 배율(0.5배)을 또 곱하면 후반부(fireRate 업그레이드를 많이 찍은 상태)에 0.025초까지 내려갈 수 있음 — 의도한 바닥보다 빨라지는 것을 막기 위해 버프 적용 후에도 동일한 `MinFireInterval`로 다시 clamp
+  - `PlayerController.Tick(dt)`에서 `BuffTimeRemaining`을 감소시키다 0 이하가 되면 `BuffFireIntervalMultiplier`를 1.0으로 되돌림
+  - **버프 중복 픽업**: 버프가 이미 적용된 상태에서 `BuffItem`을 또 주우면 지속시간만 `BuffDuration`(12초)으로 리프레시한다 (배율은 중첩되지 않음 — 항상 2배로 고정, 여러 개 주워도 4배가 되지 않도록)
+  - **재시작 시 초기화**: `PlayerController.ResetState()`에 `BuffTimeRemaining = 0f; BuffFireIntervalMultiplier = 1f;`를 추가해, 새 게임 시작 시 이전 판의 버프가 이어지지 않도록 함 (기존 `maxHp`/`hp`/`upgradeStacks` 초기화와 동일한 위치)
+
+- **픽업 반경**: `HealthPotion`/`BuffItem` 모두 XP젠과 동일한 `UpgradeEffects.EffectivePickupRadius(Player.UpgradeStacks)`를 사용한다 (별도 상수 불필요 — pickupRadius 업그레이드를 찍은 플레이어는 모든 픽업에 일관되게 혜택을 받음)
+
 - 픽업(마그넷) 처리는 기존 XP젠과 동일한 `GameManager`의 픽업 루프 패턴(반경 체크 → 효과 적용 → `Destroy`)을 그대로 재사용해 `HealthPotion`/`BuffItem` 케이스를 추가
+
+- **스프라이트**: 이번 스펙에서 처음 등장하는 아이템이라 전용 아트가 없다. `arrow.png`/`medal.png`를 만들 때와 동일하게 **PIL로 직접 그린 플레이스홀더**(단순 도형, 체력=붉은 십자/물약 모양, 버프=번개 아이콘 등)로 우선 제작하고, 나중에 HuggingFace ZeroGPU 할당량이 풀리면 그래픽노벨풍 AI 아트로 교체한다 (기존 `arrow.png`/`medal.png`와 같은 "Known limitations" 취급 — CHANGELOG에 동일하게 기록)
 
 ### 6. 적 처치 시 추가 드롭 (`GameManager.cs`)
 
@@ -105,28 +129,54 @@ public class BuffItem : MonoBehaviour
 
 ### 7. 맵 탐색 중 랜덤 스폰: `AmbientItemSpawner.cs` (신규)
 
-`SpawnController`와 같은 구조(`Tick(dt, cameraRect, parent)` 패턴)의 새 컴포넌트:
+`SpawnController`와 같은 구조의 새 컴포넌트. 특히 `SpawnController.Rng`(`public Func<float> Rng = () => UnityEngine.Random.value;`)와 동일한 주입 패턴을 그대로 따른다 — 기존 `SpawnControllerTests`처럼 EditMode 테스트에서 결정론적 시드로 검증하기 위함 (검토로 확정: 초안엔 이 패턴 언급이 없었음):
 
-- 다음 스폰까지 대기 시간을 `Random.Range(20f, 40f)`초로 매번 새로 뽑음 (요청하신 "수십 초에 하나" 밀도)
+```csharp
+public class AmbientItemSpawner : MonoBehaviour
+{
+    public Func<float> Rng = () => UnityEngine.Random.value;
+    // ...
+}
+```
+
+- 다음 스폰까지 대기 시간을 `Rng()`로 `Random.Range(20f, 40f)`에 해당하는 값을 뽑음 (요청하신 "수십 초에 하나" 밀도)
 - 스폰 위치: 카메라 사각형을 사방으로 `AmbientSpawnMargin`(예: 150유닛)만큼 확장한 사각형 내부의 임의의 점 — 적처럼 가장자리에만 스폰할 필요는 없음(정적 픽업이라 화면 안쪽에 나타나도 자연스러움). 화면 안쪽에 바로 나타나기보단 약간 바깥쪽까지 포함해 "이동해서 찾아가는" 느낌을 살림
-- 스폰 시 `HealthPotion`/`BuffItem` 중 50/50 랜덤 선택
+- 스폰 시 `HealthPotion`/`BuffItem` 중 50/50 랜덤 선택 (같은 `Rng()` 사용)
 - `GameManager.Update()`에서 `Spawner.Tick(...)` 옆에 나란히 호출
+
+### 8. 아이템 인스턴스 추적 및 재시작 시 정리 (`GameManager.cs`)
+
+기존 `xpGems`(`readonly List<GameObject> xpGems`)와 동일한 패턴으로, 6번(적 드롭)과 7번(ambient 스폰) 양쪽에서 생성되는 `HealthPotion`/`BuffItem` 인스턴스를 추적할 리스트를 추가한다 (검토로 확정: 초안은 이 추적/정리 로직이 누락되어 있었음):
+
+```csharp
+readonly List<GameObject> worldItems = new List<GameObject>(); // HealthPotion/BuffItem 공용
+```
+
+- 생성 시 `worldItems.Add(...)`, 픽업 루프(`CollectGems_ForTests`에 통합하거나 병렬 메서드 추가)에서 소비 시 리스트에서 제거
+- `StartGame()`의 기존 정리 블록(`foreach (var g in xpGems) ... xpGems.Clear();`)과 동일하게 `worldItems`도 순회하며 `SafeDestroy` 후 `Clear()` — 별도의 시간 기반 소멸 타이머는 두지 않는다 (세션이 어차피 300초 Win으로 제한되어 있어 아이템 누적이 자연스럽게 bound됨, 검토로 확정)
 
 ## 데이터 흐름 요약
 
-1. `GameManager.Update()`가 `CameraFollow`가 이미 옮겨놓은 카메라 위치를 읽어 `BoundsAroundCamera()` 계산
-2. 이 bounds를 `SpawnController.Tick`(적)과 `AmbientItemSpawner.Tick`(아이템, margin 포함한 확장 버전)에 전달
-3. 적 처치 시 `GameManager`가 XP젠(100%) + 보너스 아이템(8%, 조건부)을 인스턴스화
-4. 매 프레임 `GameManager`의 픽업 루프가 플레이어 반경 내 XP젠/HealthPotion/BuffItem을 모두 체크해 효과 적용 후 제거
-5. `PlayerController.Tick(dt)`가 clamp 없이 이동 처리, 버프 타이머 감소도 여기서 처리
+1. `CameraFollow.LateUpdate()`가 매 프레임 카메라 위치를 플레이어 위치로 갱신
+2. `GameManager.Update()`가 `CameraTransform.position`을 읽어 `BoundsAroundCamera()` 계산
+3. 이 bounds를 `SpawnController.Tick`(적)과 `AmbientItemSpawner.Tick`(아이템, margin 포함한 확장 버전)에 전달
+4. 적 처치 시 `GameManager`가 XP젠(100%) + 보너스 아이템(8%, 조건부, `worldItems`에 추가)을 인스턴스화
+5. 매 프레임 `GameManager`가 `PlayerWeapon.FireInterval`을 영구 업그레이드 배율 × 버프 배율로 재계산(바닥값 재clamp 포함, 5절 참고)
+6. 매 프레임 `GameManager`의 픽업 루프가 플레이어 반경(모든 아이템 공통 `EffectivePickupRadius`) 내 XP젠/`worldItems`(HealthPotion/BuffItem)를 모두 체크해 효과 적용 후 제거
+7. `PlayerController.Tick(dt)`가 clamp 없이 이동 처리, 버프 잔여시간 감소도 여기서 처리
+8. `StartGame()`이 `xpGems`와 동일하게 `worldItems`를 정리(destroy + clear)하고 `PlayerController.ResetState()`가 버프 상태를 초기화
 
 ## 테스트 / 검증
 
 **EditMode (신규):**
 - `BoundsAroundCamera`류 함수: 카메라 위치가 원점이 아닐 때도 올바른 Rect를 반환하는지
-- `AmbientItemSpawner`: 스폰 간격이 20~40초 범위 안에서 랜덤하게 나오는지, 스폰 위치가 확장된 카메라 사각형 안에 들어오는지 (기존 `SpawnCurveTests`/`SpawnControllerTests` 패턴 재사용)
-- `BuffItem` 적용/만료: 버프 적용 시 발사 간격이 즉시 줄어들고, `Duration` 경과 후 정확히 원래 값으로 복귀하는지
+- `AmbientItemSpawner`: `Rng`를 고정 시드로 주입해 스폰 간격이 20~40초 범위 안에서 결정론적으로 나오는지, 스폰 위치가 확장된 카메라 사각형 안에 들어오는지 (기존 `SpawnControllerTests`와 동일한 `Rng` 주입 패턴 재사용)
+- `BuffItem` 적용/만료: 버프 적용 시 발사 간격이 즉시 줄어들고, `Duration` 경과 후 정확히 원래 값(영구 업그레이드 배율만 반영된 값)으로 복귀하는지
+- `BuffItem` 바닥값: fireRate 업그레이드를 최대로 찍은 상태에서 버프를 적용해도 `PlayerWeapon.FireInterval`이 `UpgradeEffects.MinFireInterval` 밑으로 내려가지 않는지
+- `BuffItem` 중복 픽업: 버프 적용 중 다시 주우면 배율은 그대로(2배 유지)이고 `BuffTimeRemaining`만 `BuffDuration`으로 리셋되는지
 - `HealthPotion`: `Player.MaxHp`의 `HealFraction`만큼 회복하고 `MaxHp`를 넘지 않는지 (기존 `PlayerControllerTests`의 체력 관련 테스트 패턴 참고)
+- `PlayerController.ResetState()`: 버프 필드(`BuffTimeRemaining`/`BuffFireIntervalMultiplier`)가 초기값으로 돌아오는지
+- `worldItems` 정리: `StartGame()` 호출 후 이전 판에서 생성된 `HealthPotion`/`BuffItem`이 씬에 남아있지 않은지
 - 수정: `PlayerControllerTests.cs`의 `Tick(dt, bounds)` 호출 4곳을 `Tick(dt)`로, `Tick_ClampsToBounds`는 삭제
 
 **PlayMode (`FullPlaytestTests.cs` 확장):**
@@ -137,7 +187,9 @@ public class BuffItem : MonoBehaviour
 
 ## 리스크
 
-- **버프 타이머 상태 관리**: `PlayerController`에 새로운 시간 기반 상태(버프 잔여시간)가 생기면서 `ApplyUpgrade`(영구 강화)와 별개의 경로로 스탯이 변한다 — 두 시스템이 같은 스탯(예: 발사 간격)에 동시에 영향을 줄 때 계산 순서(영구 업그레이드 배율 × 버프 배율)를 명확히 해야 함. `Weapon`/`UpgradeEffects`의 기존 발사 간격 계산 코드를 확인해 배선 지점을 정확히 잡는 것이 구현 단계의 핵심 작업
 - **기존 테스트 회귀**: `PlayerController.Tick` 시그니처 변경으로 최소 4개 EditMode 테스트가 컴파일 에러 상태가 됨 — 구현 계획에서 반드시 첫 단계로 처리해야 다른 테스트 실행 자체가 막히지 않음
 - **배경 반복 어색함**: 타일 배율이 낮으면 달/스카이라인이 눈에 띄게 자주 반복될 수 있음 — 상수 조정으로 완화 가능한 수준이므로 큰 리스크는 아니나, 플레이테스트 스크린샷으로 육안 확인 필요
 - **카메라 즉시 추적의 스냅감**: 스무딩 없이 즉시 카메라가 플레이어를 따라가면 다소 딱딱하게 느껴질 수 있음 — 1차 구현은 즉시 추적으로 가고, 체감이 나쁘면 후속 조정(Lerp)으로 분리 가능
+- **PIL 플레이스홀더 아이템 아트**: 체력/버프 아이템이 정식 AI 아트가 아니라 임시 도형이라 다른 캐릭터들(그래픽노벨풍)과 톤이 어긋날 수 있음 — `arrow.png`/`medal.png`와 동일하게 CHANGELOG의 Known limitations에 기록하고 후속 아트 교체 작업으로 넘김
+
+> [!WARNING] OPEN ITEM: 카메라 follow 대상이 `Player`(플레이어 GameObject) 자체인지, 아니면 플레이어의 시각적 중심(스프라이트 중심)인지는 동일하다고 가정했다 — `PlayerController`가 붙은 GameObject의 `transform.position`이 곧 콜라이더/스프라이트의 기준점이므로 별도 오프셋 계산은 불필요하다고 보지만, 구현 중 실제로 화면 중앙에 플레이어가 정확히 오는지 육안 확인 필요.
