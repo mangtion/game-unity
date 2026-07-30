@@ -78,3 +78,6 @@ verify.log
 build.log
 playtest.log
 playtest-results.xml
+
+# Claude Code worktrees (per-plan isolated workspaces)
+.claude/worktrees/
