@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<test-run id="2" testcasecount="1" result="Passed" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-07-30 07:50:18Z" end-time="2026-07-30 07:50:32Z" duration="13.4670307">
-  <test-suite type="TestSuite" id="1009" name="game-unity" fullname="game-unity" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-07-30 07:50:18Z" end-time="2026-07-30 07:50:32Z" duration="13.467031" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+<test-run id="2" testcasecount="1" result="Passed" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-07-30 14:17:29Z" end-time="2026-07-30 14:17:45Z" duration="16.3486692">
+  <test-suite type="TestSuite" id="1009" name="game-unity" fullname="game-unity" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-07-30 14:17:29Z" end-time="2026-07-30 14:17:45Z" duration="16.348669" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
     <properties>
       <property name="platform" value="PlayMode" />
     </properties>
-    <test-suite type="Assembly" id="1003" name="Tests.PlayMode.dll" fullname="C:/Users/ASUS/Desktop/base/game-unity/Library/ScriptAssemblies/Tests.PlayMode.dll" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-07-30 07:50:18Z" end-time="2026-07-30 07:50:32Z" duration="13.446355" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <test-suite type="Assembly" id="1003" name="Tests.PlayMode.dll" fullname="C:/Users/ASUS/Desktop/base/game-unity/Library/ScriptAssemblies/Tests.PlayMode.dll" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-07-30 14:17:29Z" end-time="2026-07-30 14:17:45Z" duration="16.316673" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
       <properties>
-        <property name="_PID" value="14116" />
+        <property name="_PID" value="27596" />
         <property name="_APPDOMAIN" value="Unity Child Domain" />
         <property name="platform" value="PlayMode" />
         <property name="EditorOnly" value="False" />
       </properties>
-      <test-suite type="TestSuite" id="1004" name="YiSunSin" fullname="YiSunSin" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-07-30 07:50:18Z" end-time="2026-07-30 07:50:32Z" duration="13.445139" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <test-suite type="TestSuite" id="1004" name="YiSunSin" fullname="YiSunSin" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-07-30 14:17:29Z" end-time="2026-07-30 14:17:45Z" duration="16.315181" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
         <properties />
-        <test-suite type="TestSuite" id="1005" name="Tests" fullname="YiSunSin.Tests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-07-30 07:50:18Z" end-time="2026-07-30 07:50:32Z" duration="13.444455" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <test-suite type="TestSuite" id="1005" name="Tests" fullname="YiSunSin.Tests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-07-30 14:17:29Z" end-time="2026-07-30 14:17:45Z" duration="16.314253" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
           <properties />
-          <test-suite type="TestSuite" id="1006" name="PlayMode" fullname="YiSunSin.Tests.PlayMode" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-07-30 07:50:18Z" end-time="2026-07-30 07:50:32Z" duration="13.443820" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <test-suite type="TestSuite" id="1006" name="PlayMode" fullname="YiSunSin.Tests.PlayMode" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-07-30 14:17:29Z" end-time="2026-07-30 14:17:45Z" duration="16.313282" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
             <properties />
-            <test-suite type="TestFixture" id="1001" name="FullPlaytestTests" fullname="YiSunSin.Tests.PlayMode.FullPlaytestTests" classname="YiSunSin.Tests.PlayMode.FullPlaytestTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-07-30 07:50:18Z" end-time="2026-07-30 07:50:32Z" duration="13.440815" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <test-suite type="TestFixture" id="1001" name="FullPlaytestTests" fullname="YiSunSin.Tests.PlayMode.FullPlaytestTests" classname="YiSunSin.Tests.PlayMode.FullPlaytestTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-07-30 14:17:29Z" end-time="2026-07-30 14:17:45Z" duration="16.308973" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
               <properties />
-              <test-case id="1002" name="FullPlaytest" fullname="YiSunSin.Tests.PlayMode.FullPlaytestTests.FullPlaytest" methodname="FullPlaytest" classname="YiSunSin.Tests.PlayMode.FullPlaytestTests" runstate="Runnable" seed="2000349671" result="Passed" start-time="2026-07-30 07:50:18Z" end-time="2026-07-30 07:50:32Z" duration="13.413618" asserts="0">
+              <test-case id="1002" name="FullPlaytest" fullname="YiSunSin.Tests.PlayMode.FullPlaytestTests.FullPlaytest" methodname="FullPlaytest" classname="YiSunSin.Tests.PlayMode.FullPlaytestTests" runstate="Runnable" seed="1852382260" result="Passed" start-time="2026-07-30 14:17:29Z" end-time="2026-07-30 14:17:45Z" duration="16.274072" asserts="0">
                 <properties>
                   <property name="_JOINTYPE" value="UnityCombinatorial" />
                   <property name="retryIteration" value="0" />
@@ -37,19 +37,19 @@
 [FullPlaytest] OK: Flipbook starts on frame 0 before any movement (got 0)
 [FullPlaytest] OK: Flipbook advances off frame 0 while moving (got 3)
 [FullPlaytest] OK: Flipbook returns to frame 0 once movement stops (got 0)
-[FullPlaytest] OK: Enemies spawned from arena edges (found 3)
+[FullPlaytest] OK: Enemies spawned from arena edges (found 2)
 [FullPlaytest] OK: Weapon auto-fired at least once (ShotsFired=10)
 [FullPlaytest] DIAG capture '02_gameplay_enemy_onscreen.png': cam.orthographic=True, orthoSize=450, camPos=(0.00, 0.00, -10.00), bg.active=True, bg.pos=(0.00, 0.00, 1.00), clearFlags=SolidColor
 [FullPlaytest] Camera-only render captured: C:\Users\ASUS\Desktop\base\game\.claude\worktrees\yi-sunsin-unity-port\.superpowers\sdd\2026-07-28-yi-sunsin-unity-port\playtest-screenshots\02_gameplay_enemy_onscreen.png
 [FullPlaytest] OK: At least one live Projectile GameObject exists after auto-fire (found 2)
-[FullPlaytest] OK: A live, GameManager-tracked projectile actually advances position over time (from (289.26, 88.06, 0.00) to (355.62, 12.99, 0.00))
+[FullPlaytest] OK: A live, GameManager-tracked projectile actually advances position over time (from (158.29, 176.05, 0.00) to (65.48, 214.25, 0.00))
 [FullPlaytest] OK: A killed, GameManager-tracked enemy's GameObject is actually destroyed (not just removed from the tracking list)
 [FullPlaytest] OK: Enemy actually dies from a killing-blow projectile hit (Hp=0)
 [FullPlaytest] OK: A Hit or Death ParticleSystem instance is actively playing after the kill
 [FullPlaytest] OK: TogglePause() enters PausedManual
 [FullPlaytest] DIAG capture '03_pause.png': cam.orthographic=True, orthoSize=450, camPos=(0.00, 0.00, -10.00), bg.active=True, bg.pos=(0.00, 0.00, 1.00), clearFlags=SolidColor
 [FullPlaytest] Camera-only render captured: C:\Users\ASUS\Desktop\base\game\.claude\worktrees\yi-sunsin-unity-port\.superpowers\sdd\2026-07-28-yi-sunsin-unity-port\playtest-screenshots\03_pause.png
-[FullPlaytest] OK: Elapsed frozen while paused (6.874778 -> 6.874778)
+[FullPlaytest] OK: Elapsed frozen while paused (6.909719 -> 6.909719)
 [FullPlaytest] OK: Second TogglePause() resumes Playing
 [FullPlaytest] OK: Big XP pickup triggers PausedLevelUp (status=PausedLevelUp)
 [FullPlaytest] OK: First level-up offers exactly 3 cards (got 3)
@@ -63,18 +63,18 @@
 [FullPlaytest] OK: After both picks, resumes Playing
 [FullPlaytest] Buffed player for fast-forward survival: MaxHp=900, Hp=900
 [FullPlaytest] Fast-forwarding toward boss spawn (240s), target Elapsed=241...
-[FullPlaytest] Fast-forward to boss spawn (240s) finished at Elapsed=252.9029, status=Playing
+[FullPlaytest] Fast-forward to boss spawn (240s) finished at Elapsed=246.6943, status=Playing
 [FullPlaytest] OK: Boss enemy present in scene after crossing BossSpawnTime
-[FullPlaytest] OK: Boss banner/spotlight trigger fired (BossBannerTimer=1.666667, spotlightActive=True)
+[FullPlaytest] OK: Boss banner/spotlight trigger fired (BossBannerTimer=1.943955, spotlightActive=True)
 [FullPlaytest] DIAG capture '06_boss.png': cam.orthographic=True, orthoSize=450, camPos=(0.00, 0.00, -10.00), bg.active=True, bg.pos=(0.00, 0.00, 1.00), clearFlags=SolidColor
 [FullPlaytest] Camera-only render captured: C:\Users\ASUS\Desktop\base\game\.claude\worktrees\yi-sunsin-unity-port\.superpowers\sdd\2026-07-28-yi-sunsin-unity-port\playtest-screenshots\06_boss.png
 [FullPlaytest] Fast-forwarding toward win (300s), target Elapsed=301...
-[FullPlaytest] Fast-forward to win (300s) finished at Elapsed=303.9806, status=Win
+[FullPlaytest] Fast-forward to win (300s) finished at Elapsed=301.9843, status=Win
 [FullPlaytest] OK: Reaching WinTime transitions to Win (status=Win)
 [FullPlaytest] DIAG capture '07_win.png': cam.orthographic=True, orthoSize=450, camPos=(0.00, 0.00, -10.00), bg.active=True, bg.pos=(0.00, 0.00, 1.00), clearFlags=SolidColor
 [FullPlaytest] Camera-only render captured: C:\Users\ASUS\Desktop\base\game\.claude\worktrees\yi-sunsin-unity-port\.superpowers\sdd\2026-07-28-yi-sunsin-unity-port\playtest-screenshots\07_win.png
 [FullPlaytest] OK: Restart() from Win returns to a fresh Playing state
-[FullPlaytest] OK: Restart() resets Elapsed to ~0 (got 0.0141521)
+[FullPlaytest] OK: Restart() resets Elapsed to ~0 (got 0.013889)
 [FullPlaytest] OK: Restart() resets Player HP to max
 [FullPlaytest] OK: Lethal damage transitions to GameOver (status=GameOver)
 [FullPlaytest] DIAG capture '08_gameover.png': cam.orthographic=True, orthoSize=450, camPos=(0.00, 0.00, -10.00), bg.active=True, bg.pos=(0.00, 0.00, 1.00), clearFlags=SolidColor

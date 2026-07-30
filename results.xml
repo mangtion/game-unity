@@ -1,373 +1,373 @@
 <?xml version="1.0" encoding="utf-8"?>
-<test-run id="2" testcasecount="55" result="Passed" total="55" passed="55" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.2736954">
-  <test-suite type="TestSuite" id="1000" name="game-unity" fullname="game-unity" runstate="Runnable" testcasecount="55" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.273695" total="55" passed="55" failed="0" inconclusive="0" skipped="0" asserts="0">
+<test-run id="2" testcasecount="55" result="Passed" total="55" passed="55" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.3332022">
+  <test-suite type="TestSuite" id="1000" name="game-unity" fullname="game-unity" runstate="Runnable" testcasecount="55" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.333202" total="55" passed="55" failed="0" inconclusive="0" skipped="0" asserts="0">
     <properties>
       <property name="platform" value="EditMode" />
     </properties>
-    <test-suite type="Assembly" id="1067" name="Tests.EditMode.dll" fullname="C:/Users/ASUS/Desktop/base/game-unity/Library/ScriptAssemblies/Tests.EditMode.dll" runstate="Runnable" testcasecount="55" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.253917" total="55" passed="55" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <test-suite type="Assembly" id="1067" name="Tests.EditMode.dll" fullname="C:/Users/ASUS/Desktop/base/game-unity/Library/ScriptAssemblies/Tests.EditMode.dll" runstate="Runnable" testcasecount="55" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.306838" total="55" passed="55" failed="0" inconclusive="0" skipped="0" asserts="0">
       <properties>
-        <property name="_PID" value="28080" />
+        <property name="_PID" value="10764" />
         <property name="_APPDOMAIN" value="Unity Child Domain" />
         <property name="platform" value="EditMode" />
         <property name="EditorOnly" value="True" />
       </properties>
-      <test-suite type="TestFixture" id="1001" name="EnemyControllerTests" fullname="EnemyControllerTests" classname="EnemyControllerTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.107617" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <test-suite type="TestFixture" id="1001" name="EnemyControllerTests" fullname="EnemyControllerTests" classname="EnemyControllerTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.137623" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
         <properties />
-        <test-case id="1005" name="Initialize_Boss_SetsIsBossTrue" fullname="EnemyControllerTests.Initialize_Boss_SetsIsBossTrue" methodname="Initialize_Boss_SetsIsBossTrue" classname="EnemyControllerTests" runstate="Runnable" seed="366215774" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.050663" asserts="0">
+        <test-case id="1005" name="Initialize_Boss_SetsIsBossTrue" fullname="EnemyControllerTests.Initialize_Boss_SetsIsBossTrue" methodname="Initialize_Boss_SetsIsBossTrue" classname="EnemyControllerTests" runstate="Runnable" seed="849626059" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.069098" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1002" name="Initialize_CopiesStatsFromType" fullname="EnemyControllerTests.Initialize_CopiesStatsFromType" methodname="Initialize_CopiesStatsFromType" classname="EnemyControllerTests" runstate="Runnable" seed="5963082" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.002134" asserts="0">
+        <test-case id="1002" name="Initialize_CopiesStatsFromType" fullname="EnemyControllerTests.Initialize_CopiesStatsFromType" methodname="Initialize_CopiesStatsFromType" classname="EnemyControllerTests" runstate="Runnable" seed="1490993383" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.002625" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1006" name="Initialize_SelectsSpriteArray_MatchingType_AndAssignsToFlipbook" fullname="EnemyControllerTests.Initialize_SelectsSpriteArray_MatchingType_AndAssignsToFlipbook" methodname="Initialize_SelectsSpriteArray_MatchingType_AndAssignsToFlipbook" classname="EnemyControllerTests" runstate="Runnable" seed="1820458968" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.014139" asserts="0">
+        <test-case id="1006" name="Initialize_SelectsSpriteArray_MatchingType_AndAssignsToFlipbook" fullname="EnemyControllerTests.Initialize_SelectsSpriteArray_MatchingType_AndAssignsToFlipbook" methodname="Initialize_SelectsSpriteArray_MatchingType_AndAssignsToFlipbook" classname="EnemyControllerTests" runstate="Runnable" seed="287639080" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.016349" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1004" name="TakeDamage_ReducesHp_IsDeadReflectsIt" fullname="EnemyControllerTests.TakeDamage_ReducesHp_IsDeadReflectsIt" methodname="TakeDamage_ReducesHp_IsDeadReflectsIt" classname="EnemyControllerTests" runstate="Runnable" seed="1877777257" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.001427" asserts="0">
+        <test-case id="1004" name="TakeDamage_ReducesHp_IsDeadReflectsIt" fullname="EnemyControllerTests.TakeDamage_ReducesHp_IsDeadReflectsIt" methodname="TakeDamage_ReducesHp_IsDeadReflectsIt" classname="EnemyControllerTests" runstate="Runnable" seed="303612752" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.001730" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1003" name="Tick_MovesTowardTarget_AtItsSpeed" fullname="EnemyControllerTests.Tick_MovesTowardTarget_AtItsSpeed" methodname="Tick_MovesTowardTarget_AtItsSpeed" classname="EnemyControllerTests" runstate="Runnable" seed="775400268" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.006123" asserts="0">
+        <test-case id="1003" name="Tick_MovesTowardTarget_AtItsSpeed" fullname="EnemyControllerTests.Tick_MovesTowardTarget_AtItsSpeed" methodname="Tick_MovesTowardTarget_AtItsSpeed" classname="EnemyControllerTests" runstate="Runnable" seed="1809833195" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.006880" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
       </test-suite>
-      <test-suite type="TestFixture" id="1007" name="GameManagerTests" fullname="GameManagerTests" classname="GameManagerTests" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.054782" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <test-suite type="TestFixture" id="1007" name="GameManagerTests" fullname="GameManagerTests" classname="GameManagerTests" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.071077" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
         <properties />
-        <test-case id="1016" name="DeadEnemy_IsDestroyedAndRemoved_AndStopsDealingContactDamage" fullname="GameManagerTests.DeadEnemy_IsDestroyedAndRemoved_AndStopsDealingContactDamage" methodname="DeadEnemy_IsDestroyedAndRemoved_AndStopsDealingContactDamage" classname="GameManagerTests" runstate="Runnable" seed="1660999949" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.010962" asserts="0">
+        <test-case id="1016" name="DeadEnemy_IsDestroyedAndRemoved_AndStopsDealingContactDamage" fullname="GameManagerTests.DeadEnemy_IsDestroyedAndRemoved_AndStopsDealingContactDamage" methodname="DeadEnemy_IsDestroyedAndRemoved_AndStopsDealingContactDamage" classname="GameManagerTests" runstate="Runnable" seed="1460213211" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.012697" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1011" name="KillingAnEnemy_DropsGem_ThatGrantsXpOnPickup" fullname="GameManagerTests.KillingAnEnemy_DropsGem_ThatGrantsXpOnPickup" methodname="KillingAnEnemy_DropsGem_ThatGrantsXpOnPickup" classname="GameManagerTests" runstate="Runnable" seed="827246870" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.011767" asserts="0">
+        <test-case id="1011" name="KillingAnEnemy_DropsGem_ThatGrantsXpOnPickup" fullname="GameManagerTests.KillingAnEnemy_DropsGem_ThatGrantsXpOnPickup" methodname="KillingAnEnemy_DropsGem_ThatGrantsXpOnPickup" classname="GameManagerTests" runstate="Runnable" seed="214434387" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.020041" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1012" name="LevelingUp_PausesForUpgradeChoice_ChooseResumesPlay" fullname="GameManagerTests.LevelingUp_PausesForUpgradeChoice_ChooseResumesPlay" methodname="LevelingUp_PausesForUpgradeChoice_ChooseResumesPlay" classname="GameManagerTests" runstate="Runnable" seed="1731765967" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.010843" asserts="0">
+        <test-case id="1012" name="LevelingUp_PausesForUpgradeChoice_ChooseResumesPlay" fullname="GameManagerTests.LevelingUp_PausesForUpgradeChoice_ChooseResumesPlay" methodname="LevelingUp_PausesForUpgradeChoice_ChooseResumesPlay" classname="GameManagerTests" runstate="Runnable" seed="388809297" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.016101" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1013" name="MultiLevelUp_OffersOneCardSetPerLevel_NotJustOne" fullname="GameManagerTests.MultiLevelUp_OffersOneCardSetPerLevel_NotJustOne" methodname="MultiLevelUp_OffersOneCardSetPerLevel_NotJustOne" classname="GameManagerTests" runstate="Runnable" seed="656441433" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.003189" asserts="0">
+        <test-case id="1013" name="MultiLevelUp_OffersOneCardSetPerLevel_NotJustOne" fullname="GameManagerTests.MultiLevelUp_OffersOneCardSetPerLevel_NotJustOne" methodname="MultiLevelUp_OffersOneCardSetPerLevel_NotJustOne" classname="GameManagerTests" runstate="Runnable" seed="590854245" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.003597" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1014" name="PlayerHpReachingZero_EndsRunWithGameOver" fullname="GameManagerTests.PlayerHpReachingZero_EndsRunWithGameOver" methodname="PlayerHpReachingZero_EndsRunWithGameOver" classname="GameManagerTests" runstate="Runnable" seed="636827184" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.001742" asserts="0">
+        <test-case id="1014" name="PlayerHpReachingZero_EndsRunWithGameOver" fullname="GameManagerTests.PlayerHpReachingZero_EndsRunWithGameOver" methodname="PlayerHpReachingZero_EndsRunWithGameOver" classname="GameManagerTests" runstate="Runnable" seed="1639079223" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.001794" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1015" name="SpawnedProjectile_IsTrackedByGameManager_AndDestroyedOnExpiry" fullname="GameManagerTests.SpawnedProjectile_IsTrackedByGameManager_AndDestroyedOnExpiry" methodname="SpawnedProjectile_IsTrackedByGameManager_AndDestroyedOnExpiry" classname="GameManagerTests" runstate="Runnable" seed="908793573" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.007034" asserts="0">
+        <test-case id="1015" name="SpawnedProjectile_IsTrackedByGameManager_AndDestroyedOnExpiry" fullname="GameManagerTests.SpawnedProjectile_IsTrackedByGameManager_AndDestroyedOnExpiry" methodname="SpawnedProjectile_IsTrackedByGameManager_AndDestroyedOnExpiry" classname="GameManagerTests" runstate="Runnable" seed="1608331133" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.007040" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1009" name="StartGame_ResetsState_EntersPlaying" fullname="GameManagerTests.StartGame_ResetsState_EntersPlaying" methodname="StartGame_ResetsState_EntersPlaying" classname="GameManagerTests" runstate="Runnable" seed="39023" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.001958" asserts="0">
+        <test-case id="1009" name="StartGame_ResetsState_EntersPlaying" fullname="GameManagerTests.StartGame_ResetsState_EntersPlaying" methodname="StartGame_ResetsState_EntersPlaying" classname="GameManagerTests" runstate="Runnable" seed="955624081" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.001660" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1008" name="StartsInTitleStatus" fullname="GameManagerTests.StartsInTitleStatus" methodname="StartsInTitleStatus" classname="GameManagerTests" runstate="Runnable" seed="809452748" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.001315" asserts="0">
+        <test-case id="1008" name="StartsInTitleStatus" fullname="GameManagerTests.StartsInTitleStatus" methodname="StartsInTitleStatus" classname="GameManagerTests" runstate="Runnable" seed="1721232973" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.001372" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1010" name="TogglePause_SwitchesBetweenPlayingAndPaused" fullname="GameManagerTests.TogglePause_SwitchesBetweenPlayingAndPaused" methodname="TogglePause_SwitchesBetweenPlayingAndPaused" classname="GameManagerTests" runstate="Runnable" seed="127530820" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.001460" asserts="0">
+        <test-case id="1010" name="TogglePause_SwitchesBetweenPlayingAndPaused" fullname="GameManagerTests.TogglePause_SwitchesBetweenPlayingAndPaused" methodname="TogglePause_SwitchesBetweenPlayingAndPaused" classname="GameManagerTests" runstate="Runnable" seed="765969119" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.001647" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
       </test-suite>
-      <test-suite type="TestFixture" id="1017" name="LevelingSystemTests" fullname="LevelingSystemTests" classname="LevelingSystemTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.006528" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <test-suite type="TestFixture" id="1017" name="LevelingSystemTests" fullname="LevelingSystemTests" classname="LevelingSystemTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.007314" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
         <properties />
-        <test-case id="1022" name="ApplyXp_CascadesMultipleLevels" fullname="LevelingSystemTests.ApplyXp_CascadesMultipleLevels" methodname="ApplyXp_CascadesMultipleLevels" classname="LevelingSystemTests" runstate="Runnable" seed="329638558" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.001034" asserts="0">
+        <test-case id="1022" name="ApplyXp_CascadesMultipleLevels" fullname="LevelingSystemTests.ApplyXp_CascadesMultipleLevels" methodname="ApplyXp_CascadesMultipleLevels" classname="LevelingSystemTests" runstate="Runnable" seed="1891966471" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.001202" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1020" name="ApplyXp_NoLevelUp_UnderThreshold" fullname="LevelingSystemTests.ApplyXp_NoLevelUp_UnderThreshold" methodname="ApplyXp_NoLevelUp_UnderThreshold" classname="LevelingSystemTests" runstate="Runnable" seed="798969219" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.000580" asserts="0">
+        <test-case id="1020" name="ApplyXp_NoLevelUp_UnderThreshold" fullname="LevelingSystemTests.ApplyXp_NoLevelUp_UnderThreshold" methodname="ApplyXp_NoLevelUp_UnderThreshold" classname="LevelingSystemTests" runstate="Runnable" seed="748105105" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.000652" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1021" name="ApplyXp_SingleLevelUp_CarriesRemainder" fullname="LevelingSystemTests.ApplyXp_SingleLevelUp_CarriesRemainder" methodname="ApplyXp_SingleLevelUp_CarriesRemainder" classname="LevelingSystemTests" runstate="Runnable" seed="1427878027" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.000572" asserts="0">
+        <test-case id="1021" name="ApplyXp_SingleLevelUp_CarriesRemainder" fullname="LevelingSystemTests.ApplyXp_SingleLevelUp_CarriesRemainder" methodname="ApplyXp_SingleLevelUp_CarriesRemainder" classname="LevelingSystemTests" runstate="Runnable" seed="1899390088" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.000673" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1018" name="ConfigValues_MatchSpec" fullname="LevelingSystemTests.ConfigValues_MatchSpec" methodname="ConfigValues_MatchSpec" classname="LevelingSystemTests" runstate="Runnable" seed="1257185012" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.001003" asserts="0">
+        <test-case id="1018" name="ConfigValues_MatchSpec" fullname="LevelingSystemTests.ConfigValues_MatchSpec" methodname="ConfigValues_MatchSpec" classname="LevelingSystemTests" runstate="Runnable" seed="1155361781" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.001208" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1019" name="XpForLevel_Is10TimesLevel" fullname="LevelingSystemTests.XpForLevel_Is10TimesLevel" methodname="XpForLevel_Is10TimesLevel" classname="LevelingSystemTests" runstate="Runnable" seed="1250524551" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.000531" asserts="0">
+        <test-case id="1019" name="XpForLevel_Is10TimesLevel" fullname="LevelingSystemTests.XpForLevel_Is10TimesLevel" methodname="XpForLevel_Is10TimesLevel" classname="LevelingSystemTests" runstate="Runnable" seed="1151270979" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.000453" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
       </test-suite>
-      <test-suite type="TestFixture" id="1023" name="PlayerControllerTests" fullname="PlayerControllerTests" classname="PlayerControllerTests" runstate="Runnable" testcasecount="11" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.019849" total="11" passed="11" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <test-suite type="TestFixture" id="1023" name="PlayerControllerTests" fullname="PlayerControllerTests" classname="PlayerControllerTests" runstate="Runnable" testcasecount="11" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.020799" total="11" passed="11" failed="0" inconclusive="0" skipped="0" asserts="0">
         <properties />
-        <test-case id="1032" name="ApplyUpgrade_IncrementsStack_AndAppliesEffectImmediately" fullname="PlayerControllerTests.ApplyUpgrade_IncrementsStack_AndAppliesEffectImmediately" methodname="ApplyUpgrade_IncrementsStack_AndAppliesEffectImmediately" classname="PlayerControllerTests" runstate="Runnable" seed="608650935" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.001664" asserts="0">
+        <test-case id="1032" name="ApplyUpgrade_IncrementsStack_AndAppliesEffectImmediately" fullname="PlayerControllerTests.ApplyUpgrade_IncrementsStack_AndAppliesEffectImmediately" methodname="ApplyUpgrade_IncrementsStack_AndAppliesEffectImmediately" classname="PlayerControllerTests" runstate="Runnable" seed="1788272386" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.001895" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1033" name="ApplyUpgrade_MaxHp_HealsByTheIncrease" fullname="PlayerControllerTests.ApplyUpgrade_MaxHp_HealsByTheIncrease" methodname="ApplyUpgrade_MaxHp_HealsByTheIncrease" classname="PlayerControllerTests" runstate="Runnable" seed="137970717" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.001099" asserts="0">
+        <test-case id="1033" name="ApplyUpgrade_MaxHp_HealsByTheIncrease" fullname="PlayerControllerTests.ApplyUpgrade_MaxHp_HealsByTheIncrease" methodname="ApplyUpgrade_MaxHp_HealsByTheIncrease" classname="PlayerControllerTests" runstate="Runnable" seed="717381176" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.001229" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1030" name="GainXp_ReturnsLevelsGained" fullname="PlayerControllerTests.GainXp_ReturnsLevelsGained" methodname="GainXp_ReturnsLevelsGained" classname="PlayerControllerTests" runstate="Runnable" seed="86452827" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.001121" asserts="0">
+        <test-case id="1030" name="GainXp_ReturnsLevelsGained" fullname="PlayerControllerTests.GainXp_ReturnsLevelsGained" methodname="GainXp_ReturnsLevelsGained" classname="PlayerControllerTests" runstate="Runnable" seed="551300887" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.001228" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1031" name="GainXp_ReturnsMultipleLevelsGained_InOneCall" fullname="PlayerControllerTests.GainXp_ReturnsMultipleLevelsGained_InOneCall" methodname="GainXp_ReturnsMultipleLevelsGained_InOneCall" classname="PlayerControllerTests" runstate="Runnable" seed="315197215" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.000951" asserts="0">
+        <test-case id="1031" name="GainXp_ReturnsMultipleLevelsGained_InOneCall" fullname="PlayerControllerTests.GainXp_ReturnsMultipleLevelsGained_InOneCall" methodname="GainXp_ReturnsMultipleLevelsGained_InOneCall" classname="PlayerControllerTests" runstate="Runnable" seed="1934527317" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.001094" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1029" name="IFrames_ExpireAfterTick" fullname="PlayerControllerTests.IFrames_ExpireAfterTick" methodname="IFrames_ExpireAfterTick" classname="PlayerControllerTests" runstate="Runnable" seed="1735590300" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.001867" asserts="0">
+        <test-case id="1029" name="IFrames_ExpireAfterTick" fullname="PlayerControllerTests.IFrames_ExpireAfterTick" methodname="IFrames_ExpireAfterTick" classname="PlayerControllerTests" runstate="Runnable" seed="2119283447" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.002163" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1034" name="ResetState_RestoresFreshPlayer" fullname="PlayerControllerTests.ResetState_RestoresFreshPlayer" methodname="ResetState_RestoresFreshPlayer" classname="PlayerControllerTests" runstate="Runnable" seed="1711246383" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.001299" asserts="0">
+        <test-case id="1034" name="ResetState_RestoresFreshPlayer" fullname="PlayerControllerTests.ResetState_RestoresFreshPlayer" methodname="ResetState_RestoresFreshPlayer" classname="PlayerControllerTests" runstate="Runnable" seed="558515817" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.001717" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1024" name="StartsAtFullHp_WithConfiguredDefaults" fullname="PlayerControllerTests.StartsAtFullHp_WithConfiguredDefaults" methodname="StartsAtFullHp_WithConfiguredDefaults" classname="PlayerControllerTests" runstate="Runnable" seed="783180961" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.001117" asserts="0">
+        <test-case id="1024" name="StartsAtFullHp_WithConfiguredDefaults" fullname="PlayerControllerTests.StartsAtFullHp_WithConfiguredDefaults" methodname="StartsAtFullHp_WithConfiguredDefaults" classname="PlayerControllerTests" runstate="Runnable" seed="804694956" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.001361" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1028" name="TakeDamage_ReducesHp_AndGrantsIFrames" fullname="PlayerControllerTests.TakeDamage_ReducesHp_AndGrantsIFrames" methodname="TakeDamage_ReducesHp_AndGrantsIFrames" classname="PlayerControllerTests" runstate="Runnable" seed="82276612" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.001634" asserts="0">
+        <test-case id="1028" name="TakeDamage_ReducesHp_AndGrantsIFrames" fullname="PlayerControllerTests.TakeDamage_ReducesHp_AndGrantsIFrames" methodname="TakeDamage_ReducesHp_AndGrantsIFrames" classname="PlayerControllerTests" runstate="Runnable" seed="861447084" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.001204" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1027" name="Tick_ClampsToBounds" fullname="PlayerControllerTests.Tick_ClampsToBounds" methodname="Tick_ClampsToBounds" classname="PlayerControllerTests" runstate="Runnable" seed="2058592389" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.002070" asserts="0">
+        <test-case id="1027" name="Tick_ClampsToBounds" fullname="PlayerControllerTests.Tick_ClampsToBounds" methodname="Tick_ClampsToBounds" classname="PlayerControllerTests" runstate="Runnable" seed="52262609" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.001459" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1025" name="Tick_MovesAtMoveSpeed_AlongSingleAxis" fullname="PlayerControllerTests.Tick_MovesAtMoveSpeed_AlongSingleAxis" methodname="Tick_MovesAtMoveSpeed_AlongSingleAxis" classname="PlayerControllerTests" runstate="Runnable" seed="326664343" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.001493" asserts="0">
+        <test-case id="1025" name="Tick_MovesAtMoveSpeed_AlongSingleAxis" fullname="PlayerControllerTests.Tick_MovesAtMoveSpeed_AlongSingleAxis" methodname="Tick_MovesAtMoveSpeed_AlongSingleAxis" classname="PlayerControllerTests" runstate="Runnable" seed="1982336504" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.001356" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1026" name="Tick_NormalizesDiagonalMovement" fullname="PlayerControllerTests.Tick_NormalizesDiagonalMovement" methodname="Tick_NormalizesDiagonalMovement" classname="PlayerControllerTests" runstate="Runnable" seed="670408949" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.001436" asserts="0">
+        <test-case id="1026" name="Tick_NormalizesDiagonalMovement" fullname="PlayerControllerTests.Tick_NormalizesDiagonalMovement" methodname="Tick_NormalizesDiagonalMovement" classname="PlayerControllerTests" runstate="Runnable" seed="1457664873" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.001397" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
       </test-suite>
-      <test-suite type="TestFixture" id="1035" name="SanityTests" fullname="SanityTests" classname="SanityTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.002103" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <test-suite type="TestFixture" id="1035" name="SanityTests" fullname="SanityTests" classname="SanityTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.002099" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
         <properties />
-        <test-case id="1036" name="TestPipelineWorks" fullname="SanityTests.TestPipelineWorks" methodname="TestPipelineWorks" classname="SanityTests" runstate="Runnable" seed="242910888" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.000501" asserts="0">
+        <test-case id="1036" name="TestPipelineWorks" fullname="SanityTests.TestPipelineWorks" methodname="TestPipelineWorks" classname="SanityTests" runstate="Runnable" seed="541543063" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.000406" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
       </test-suite>
-      <test-suite type="TestFixture" id="1037" name="SpawnControllerTests" fullname="SpawnControllerTests" classname="SpawnControllerTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.013649" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <test-suite type="TestFixture" id="1037" name="SpawnControllerTests" fullname="SpawnControllerTests" classname="SpawnControllerTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.013697" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
         <properties />
-        <test-case id="1038" name="DoesNotSpawnBoss_BeforeSpawnTime" fullname="SpawnControllerTests.DoesNotSpawnBoss_BeforeSpawnTime" methodname="DoesNotSpawnBoss_BeforeSpawnTime" classname="SpawnControllerTests" runstate="Runnable" seed="87070404" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.005000" asserts="0">
+        <test-case id="1038" name="DoesNotSpawnBoss_BeforeSpawnTime" fullname="SpawnControllerTests.DoesNotSpawnBoss_BeforeSpawnTime" methodname="DoesNotSpawnBoss_BeforeSpawnTime" classname="SpawnControllerTests" runstate="Runnable" seed="2068265612" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.005047" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1040" name="EmitsRegularSpawn_OnceIntervalElapses" fullname="SpawnControllerTests.EmitsRegularSpawn_OnceIntervalElapses" methodname="EmitsRegularSpawn_OnceIntervalElapses" classname="SpawnControllerTests" runstate="Runnable" seed="1225426506" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.003598" asserts="0">
+        <test-case id="1040" name="EmitsRegularSpawn_OnceIntervalElapses" fullname="SpawnControllerTests.EmitsRegularSpawn_OnceIntervalElapses" methodname="EmitsRegularSpawn_OnceIntervalElapses" classname="SpawnControllerTests" runstate="Runnable" seed="1308347633" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.003491" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1039" name="SpawnsBoss_ExactlyOnce_AtOrAfter4Minutes" fullname="SpawnControllerTests.SpawnsBoss_ExactlyOnce_AtOrAfter4Minutes" methodname="SpawnsBoss_ExactlyOnce_AtOrAfter4Minutes" classname="SpawnControllerTests" runstate="Runnable" seed="1188211978" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.002841" asserts="0">
+        <test-case id="1039" name="SpawnsBoss_ExactlyOnce_AtOrAfter4Minutes" fullname="SpawnControllerTests.SpawnsBoss_ExactlyOnce_AtOrAfter4Minutes" methodname="SpawnsBoss_ExactlyOnce_AtOrAfter4Minutes" classname="SpawnControllerTests" runstate="Runnable" seed="865045819" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.002776" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
       </test-suite>
-      <test-suite type="TestFixture" id="1041" name="SpawnCurveTests" fullname="SpawnCurveTests" classname="SpawnCurveTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.003458" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <test-suite type="TestFixture" id="1041" name="SpawnCurveTests" fullname="SpawnCurveTests" classname="SpawnCurveTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.003313" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
         <properties />
-        <test-case id="1043" name="DecaysFivePercentEvery15Seconds" fullname="SpawnCurveTests.DecaysFivePercentEvery15Seconds" methodname="DecaysFivePercentEvery15Seconds" classname="SpawnCurveTests" runstate="Runnable" seed="514931871" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.000456" asserts="0">
+        <test-case id="1043" name="DecaysFivePercentEvery15Seconds" fullname="SpawnCurveTests.DecaysFivePercentEvery15Seconds" methodname="DecaysFivePercentEvery15Seconds" classname="SpawnCurveTests" runstate="Runnable" seed="2022467181" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.000390" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1044" name="NeverDropsBelowFloor" fullname="SpawnCurveTests.NeverDropsBelowFloor" methodname="NeverDropsBelowFloor" classname="SpawnCurveTests" runstate="Runnable" seed="1080932772" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.000399" asserts="0">
+        <test-case id="1044" name="NeverDropsBelowFloor" fullname="SpawnCurveTests.NeverDropsBelowFloor" methodname="NeverDropsBelowFloor" classname="SpawnCurveTests" runstate="Runnable" seed="571715225" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.000361" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1042" name="StartsAtBaseInterval" fullname="SpawnCurveTests.StartsAtBaseInterval" methodname="StartsAtBaseInterval" classname="SpawnCurveTests" runstate="Runnable" seed="1760827925" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.000361" asserts="0">
+        <test-case id="1042" name="StartsAtBaseInterval" fullname="SpawnCurveTests.StartsAtBaseInterval" methodname="StartsAtBaseInterval" classname="SpawnCurveTests" runstate="Runnable" seed="1396816614" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.000345" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
       </test-suite>
-      <test-suite type="TestFixture" id="1045" name="TargetingTests" fullname="TargetingTests" classname="TargetingTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.008810" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <test-suite type="TestFixture" id="1045" name="TargetingTests" fullname="TargetingTests" classname="TargetingTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.009467" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
         <properties />
-        <test-case id="1048" name="IgnoresDeadEnemies" fullname="TargetingTests.IgnoresDeadEnemies" methodname="IgnoresDeadEnemies" classname="TargetingTests" runstate="Runnable" seed="214871455" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.004056" asserts="0">
+        <test-case id="1048" name="IgnoresDeadEnemies" fullname="TargetingTests.IgnoresDeadEnemies" methodname="IgnoresDeadEnemies" classname="TargetingTests" runstate="Runnable" seed="1953149687" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.004543" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1047" name="ReturnsClosestLiveEnemy" fullname="TargetingTests.ReturnsClosestLiveEnemy" methodname="ReturnsClosestLiveEnemy" classname="TargetingTests" runstate="Runnable" seed="1814880492" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.001665" asserts="0">
+        <test-case id="1047" name="ReturnsClosestLiveEnemy" fullname="TargetingTests.ReturnsClosestLiveEnemy" methodname="ReturnsClosestLiveEnemy" classname="TargetingTests" runstate="Runnable" seed="629747698" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.001693" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1046" name="ReturnsNull_WhenNoEnemies" fullname="TargetingTests.ReturnsNull_WhenNoEnemies" methodname="ReturnsNull_WhenNoEnemies" classname="TargetingTests" runstate="Runnable" seed="205494526" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.001108" asserts="0">
+        <test-case id="1046" name="ReturnsNull_WhenNoEnemies" fullname="TargetingTests.ReturnsNull_WhenNoEnemies" methodname="ReturnsNull_WhenNoEnemies" classname="TargetingTests" runstate="Runnable" seed="1151351042" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.001134" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
       </test-suite>
-      <test-suite type="TestFixture" id="1049" name="UpgradeEffectsTests" fullname="UpgradeEffectsTests" classname="UpgradeEffectsTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.006771" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <test-suite type="TestFixture" id="1049" name="UpgradeEffectsTests" fullname="UpgradeEffectsTests" classname="UpgradeEffectsTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.006887" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
         <properties />
-        <test-case id="1052" name="FireRate_Reduces10PercentCompounding" fullname="UpgradeEffectsTests.FireRate_Reduces10PercentCompounding" methodname="FireRate_Reduces10PercentCompounding" classname="UpgradeEffectsTests" runstate="Runnable" seed="941288547" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.000785" asserts="0">
+        <test-case id="1052" name="FireRate_Reduces10PercentCompounding" fullname="UpgradeEffectsTests.FireRate_Reduces10PercentCompounding" methodname="FireRate_Reduces10PercentCompounding" classname="UpgradeEffectsTests" runstate="Runnable" seed="775360682" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.000753" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1053" name="MaxHp_AddsFlat20PerStack" fullname="UpgradeEffectsTests.MaxHp_AddsFlat20PerStack" methodname="MaxHp_AddsFlat20PerStack" classname="UpgradeEffectsTests" runstate="Runnable" seed="1812560544" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.000659" asserts="0">
+        <test-case id="1053" name="MaxHp_AddsFlat20PerStack" fullname="UpgradeEffectsTests.MaxHp_AddsFlat20PerStack" methodname="MaxHp_AddsFlat20PerStack" classname="UpgradeEffectsTests" runstate="Runnable" seed="886800251" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.000636" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1055" name="MoveSpeed_Adds10PercentPerStack" fullname="UpgradeEffectsTests.MoveSpeed_Adds10PercentPerStack" methodname="MoveSpeed_Adds10PercentPerStack" classname="UpgradeEffectsTests" runstate="Runnable" seed="207654873" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.000533" asserts="0">
+        <test-case id="1055" name="MoveSpeed_Adds10PercentPerStack" fullname="UpgradeEffectsTests.MoveSpeed_Adds10PercentPerStack" methodname="MoveSpeed_Adds10PercentPerStack" classname="UpgradeEffectsTests" runstate="Runnable" seed="498701020" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.000480" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1054" name="PickupRadius_Adds20PercentPerStack" fullname="UpgradeEffectsTests.PickupRadius_Adds20PercentPerStack" methodname="PickupRadius_Adds20PercentPerStack" classname="UpgradeEffectsTests" runstate="Runnable" seed="321569710" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.000487" asserts="0">
+        <test-case id="1054" name="PickupRadius_Adds20PercentPerStack" fullname="UpgradeEffectsTests.PickupRadius_Adds20PercentPerStack" methodname="PickupRadius_Adds20PercentPerStack" classname="UpgradeEffectsTests" runstate="Runnable" seed="688067185" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.000417" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1051" name="WeaponDamage_Adds20PercentPerStack" fullname="UpgradeEffectsTests.WeaponDamage_Adds20PercentPerStack" methodname="WeaponDamage_Adds20PercentPerStack" classname="UpgradeEffectsTests" runstate="Runnable" seed="632033615" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.000683" asserts="0">
+        <test-case id="1051" name="WeaponDamage_Adds20PercentPerStack" fullname="UpgradeEffectsTests.WeaponDamage_Adds20PercentPerStack" methodname="WeaponDamage_Adds20PercentPerStack" classname="UpgradeEffectsTests" runstate="Runnable" seed="1811442697" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.000614" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1050" name="ZeroStacks_ReturnsBaseValues" fullname="UpgradeEffectsTests.ZeroStacks_ReturnsBaseValues" methodname="ZeroStacks_ReturnsBaseValues" classname="UpgradeEffectsTests" runstate="Runnable" seed="1521302450" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.000630" asserts="0">
+        <test-case id="1050" name="ZeroStacks_ReturnsBaseValues" fullname="UpgradeEffectsTests.ZeroStacks_ReturnsBaseValues" methodname="ZeroStacks_ReturnsBaseValues" classname="UpgradeEffectsTests" runstate="Runnable" seed="1312315287" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.000798" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
       </test-suite>
-      <test-suite type="TestFixture" id="1056" name="UpgradeSystemTests" fullname="UpgradeSystemTests" classname="UpgradeSystemTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.014229" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <test-suite type="TestFixture" id="1056" name="UpgradeSystemTests" fullname="UpgradeSystemTests" classname="UpgradeSystemTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.015848" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
         <properties />
-        <test-case id="1059" name="PickChoices_ExcludesMaxedUpgrades" fullname="UpgradeSystemTests.PickChoices_ExcludesMaxedUpgrades" methodname="PickChoices_ExcludesMaxedUpgrades" classname="UpgradeSystemTests" runstate="Runnable" seed="2137418707" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.006334" asserts="0">
+        <test-case id="1059" name="PickChoices_ExcludesMaxedUpgrades" fullname="UpgradeSystemTests.PickChoices_ExcludesMaxedUpgrades" methodname="PickChoices_ExcludesMaxedUpgrades" classname="UpgradeSystemTests" runstate="Runnable" seed="1083429071" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.006951" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1058" name="PickChoices_Returns3Unique_WhenNoneMaxed" fullname="UpgradeSystemTests.PickChoices_Returns3Unique_WhenNoneMaxed" methodname="PickChoices_Returns3Unique_WhenNoneMaxed" classname="UpgradeSystemTests" runstate="Runnable" seed="2115080534" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.003017" asserts="0">
+        <test-case id="1058" name="PickChoices_Returns3Unique_WhenNoneMaxed" fullname="UpgradeSystemTests.PickChoices_Returns3Unique_WhenNoneMaxed" methodname="PickChoices_Returns3Unique_WhenNoneMaxed" classname="UpgradeSystemTests" runstate="Runnable" seed="1892577423" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.003362" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1060" name="PickChoices_ReturnsFewerThanCount_WhenPoolSmaller" fullname="UpgradeSystemTests.PickChoices_ReturnsFewerThanCount_WhenPoolSmaller" methodname="PickChoices_ReturnsFewerThanCount_WhenPoolSmaller" classname="UpgradeSystemTests" runstate="Runnable" seed="2092383078" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.000848" asserts="0">
+        <test-case id="1060" name="PickChoices_ReturnsFewerThanCount_WhenPoolSmaller" fullname="UpgradeSystemTests.PickChoices_ReturnsFewerThanCount_WhenPoolSmaller" methodname="PickChoices_ReturnsFewerThanCount_WhenPoolSmaller" classname="UpgradeSystemTests" runstate="Runnable" seed="902837122" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.000931" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1057" name="Pool_Has5Upgrades_EachMaxing5Stacks" fullname="UpgradeSystemTests.Pool_Has5Upgrades_EachMaxing5Stacks" methodname="Pool_Has5Upgrades_EachMaxing5Stacks" classname="UpgradeSystemTests" runstate="Runnable" seed="1512273409" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.002035" asserts="0">
+        <test-case id="1057" name="Pool_Has5Upgrades_EachMaxing5Stacks" fullname="UpgradeSystemTests.Pool_Has5Upgrades_EachMaxing5Stacks" methodname="Pool_Has5Upgrades_EachMaxing5Stacks" classname="UpgradeSystemTests" runstate="Runnable" seed="1277783215" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.002330" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
       </test-suite>
-      <test-suite type="TestFixture" id="1061" name="WeaponTests" fullname="WeaponTests" classname="WeaponTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.010262" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <test-suite type="TestFixture" id="1061" name="WeaponTests" fullname="WeaponTests" classname="WeaponTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.012212" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
         <properties />
-        <test-case id="1063" name="Projectile_ExpiresAtRange" fullname="WeaponTests.Projectile_ExpiresAtRange" methodname="Projectile_ExpiresAtRange" classname="WeaponTests" runstate="Runnable" seed="1956416338" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.002363" asserts="0">
+        <test-case id="1063" name="Projectile_ExpiresAtRange" fullname="WeaponTests.Projectile_ExpiresAtRange" methodname="Projectile_ExpiresAtRange" classname="WeaponTests" runstate="Runnable" seed="1178298189" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.002791" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1062" name="Projectile_MovesAlongNormalizedDirection_AtGivenSpeed" fullname="WeaponTests.Projectile_MovesAlongNormalizedDirection_AtGivenSpeed" methodname="Projectile_MovesAlongNormalizedDirection_AtGivenSpeed" classname="WeaponTests" runstate="Runnable" seed="1720159768" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.001549" asserts="0">
+        <test-case id="1062" name="Projectile_MovesAlongNormalizedDirection_AtGivenSpeed" fullname="WeaponTests.Projectile_MovesAlongNormalizedDirection_AtGivenSpeed" methodname="Projectile_MovesAlongNormalizedDirection_AtGivenSpeed" classname="WeaponTests" runstate="Runnable" seed="1279997419" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.001731" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1064" name="Weapon_DoesNotFire_WhenNoTarget" fullname="WeaponTests.Weapon_DoesNotFire_WhenNoTarget" methodname="Weapon_DoesNotFire_WhenNoTarget" classname="WeaponTests" runstate="Runnable" seed="1018489987" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.000853" asserts="0">
+        <test-case id="1064" name="Weapon_DoesNotFire_WhenNoTarget" fullname="WeaponTests.Weapon_DoesNotFire_WhenNoTarget" methodname="Weapon_DoesNotFire_WhenNoTarget" classname="WeaponTests" runstate="Runnable" seed="1226636493" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.000983" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1066" name="Weapon_DoesNotFireAgain_BeforeCooldownElapses" fullname="WeaponTests.Weapon_DoesNotFireAgain_BeforeCooldownElapses" methodname="Weapon_DoesNotFireAgain_BeforeCooldownElapses" classname="WeaponTests" runstate="Runnable" seed="1908123079" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.001735" asserts="0">
+        <test-case id="1066" name="Weapon_DoesNotFireAgain_BeforeCooldownElapses" fullname="WeaponTests.Weapon_DoesNotFireAgain_BeforeCooldownElapses" methodname="Weapon_DoesNotFireAgain_BeforeCooldownElapses" classname="WeaponTests" runstate="Runnable" seed="825160102" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.001938" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />
           </properties>
         </test-case>
-        <test-case id="1065" name="Weapon_Fires_AndResetsCooldown" fullname="WeaponTests.Weapon_Fires_AndResetsCooldown" methodname="Weapon_Fires_AndResetsCooldown" classname="WeaponTests" runstate="Runnable" seed="1649234138" result="Passed" start-time="2026-07-30 07:51:19Z" end-time="2026-07-30 07:51:19Z" duration="0.001514" asserts="0">
+        <test-case id="1065" name="Weapon_Fires_AndResetsCooldown" fullname="WeaponTests.Weapon_Fires_AndResetsCooldown" methodname="Weapon_Fires_AndResetsCooldown" classname="WeaponTests" runstate="Runnable" seed="60744023" result="Passed" start-time="2026-07-30 14:18:51Z" end-time="2026-07-30 14:18:51Z" duration="0.001800" asserts="0">
           <properties>
             <property name="retryIteration" value="0" />
             <property name="repeatIteration" value="0" />

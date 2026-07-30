@@ -8,6 +8,29 @@ pre-1.0 so breaking changes may land in a MINOR bump).
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-07-30
+
+### Changed
+- Replaced player/enemy-basic/enemy-fast/boss sprites with user-supplied AI-generated
+  character art (provided directly as reference images, bypassing the blocked
+  HuggingFace ZeroGPU generation pipeline). Background removed via `rembg`
+  (u2net model for player/enemies; the boss's busier burning-city/flame-sword source
+  image needed a hand-tuned silhouette mask + a near-black vignette fill for the
+  remaining edges, since automated segmentation struggled with its dark, high-detail
+  background). Each character was resized to a 128x128 frame and tiled into a
+  1024x128 sheet to fit the existing `SpriteFlipbook` import pipeline unchanged.
+
+### Known limitations
+- The source art is a single static pose per character, not a multi-frame walk/attack
+  cycle, so the same frame is repeated 8x - characters no longer animate while
+  moving (previously fixed in 0.1.0's visual reboot). Traded off deliberately for
+  much better visibility/contrast; a true walk-cycle regeneration is a follow-up.
+- The 0.1.2 visual-scale (1.7x) and brightness-tint (1.9x) stopgap from
+  `ProjectBootstrap.cs` still applies on top of this new art. It reads fine (verified
+  via screenshot) but is untuned for this specific art and could be revisited.
+- arrow.png/medal.png are still the PIL-drawn placeholders from 0.0.1 (see Known
+  limitations there) - not part of this swap.
+
 ## [0.1.2] - 2026-07-30
 
 ### Fixed
