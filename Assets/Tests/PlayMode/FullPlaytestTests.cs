@@ -280,6 +280,33 @@ namespace YiSunSin.Tests.PlayMode
             Check(gm.UpgradeChoices.Count == 3, $"First level-up offers exactly 3 cards (got {gm.UpgradeChoices.Count})");
             yield return CaptureFull("04_levelup_first_cards.png");
 
+            // ---- Step 5a: upgrade card Button must actually be the topmost UI raycast hit ----
+            // This exercises the real EventSystem/GraphicRaycaster path, unlike the direct
+            // gm.ChooseUpgrade() calls below (those bypass the UI entirely and would pass
+            // even if the button were visually present but unclickable, e.g. covered by an
+            // invisible full-screen raycast blocker).
+            var uiControllerForClickTest = Object.FindFirstObjectByType<UIController>();
+            var eventSystem = Object.FindFirstObjectByType<UnityEngine.EventSystems.EventSystem>();
+            var raycaster = Object.FindFirstObjectByType<UnityEngine.UI.GraphicRaycaster>();
+            if (uiControllerForClickTest != null && eventSystem != null && raycaster != null &&
+                uiControllerForClickTest.UpgradeCardContainer.childCount > 0)
+            {
+                var cardButton = uiControllerForClickTest.UpgradeCardContainer.GetChild(0).GetComponent<UnityEngine.UI.Button>();
+                var cardRect = cardButton.GetComponent<RectTransform>();
+                Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(null, cardRect.position);
+                var pointerData = new UnityEngine.EventSystems.PointerEventData(eventSystem) { position = screenPoint };
+                var raycastResults = new System.Collections.Generic.List<UnityEngine.EventSystems.RaycastResult>();
+                raycaster.Raycast(pointerData, raycastResults);
+                bool buttonIsTopmostHit = raycastResults.Count > 0 &&
+                    raycastResults[0].gameObject.GetComponentInParent<UnityEngine.UI.Button>() == cardButton;
+                string topHitName = raycastResults.Count > 0 ? raycastResults[0].gameObject.name : "none";
+                Check(buttonIsTopmostHit, $"Upgrade card Button is the topmost UI raycast hit at its screen position (top hit: {topHitName})");
+            }
+            else
+            {
+                Check(false, "Could not locate UIController/EventSystem/GraphicRaycaster/upgrade card to test click-through");
+            }
+
             if (gm.UpgradeChoices.Count > 0)
             {
                 string firstChoice = gm.UpgradeChoices[0].Id;

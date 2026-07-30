@@ -439,6 +439,11 @@ namespace YiSunSin.EditorTools
             var winScreen = MakePanel("WinScreen", canvasGo.transform);
             var hud = MakePanel("Hud", canvasGo.transform);
             hud.GetComponent<Image>().color = Color.clear; // HUD is just a container, not a dimming overlay
+            // Hud is active simultaneously with LevelUpScreen (see UIController.HandleStatusChanged)
+            // and, as the last sibling under Canvas, renders on top of it. Its full-screen Image
+            // still blocks GraphicRaycaster hits by default even at alpha 0, so without this it
+            // silently eats every click meant for the upgrade card Buttons underneath.
+            hud.GetComponent<Image>().raycastTarget = false;
 
             // ---- TitleScreen: title label + Start button ----
             var titleLabelGo = new GameObject("TitleLabel", typeof(RectTransform), typeof(Text));
