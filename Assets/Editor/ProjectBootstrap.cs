@@ -26,12 +26,32 @@ namespace YiSunSin.EditorTools
         // documented at its definition.
         const float MedalVisualDiameter = 16f; // pickup icon, kept small/subordinate to characters
 
+        // Player/enemy/boss art was reported as barely visible: at exact 2*radius diameter,
+        // a player (radius 16) renders at only ~3.5% of the 900-unit-tall arena view. This
+        // scales CHARACTER sprites up visually only (via a smaller spritePixelsPerUnit) while
+        // leaving CircleCollider2D.radius (set directly from GameConfig in PlayerController/
+        // EnemyController, independent of PPU) untouched - hitboxes are unchanged, only the
+        // rendered sprite is bigger than its collider now. Projectile/pickup icons keep the
+        // exact 1:1 diameter-matches-radius convention since they weren't reported as a
+        // visibility problem and their small size is less safety-critical than judging a
+        // character's hit range.
+        const float CharacterVisualScale = 1.7f;
+
+        // Multiplies each character sprite's rendered color (Sprites/Default is unlit, so
+        // Global Light 2D/BossSpotlight intensity has no effect on it - see SetupRenderPipeline's
+        // comment). The generated art's "muted desaturated" + "dramatic lighting" palette came
+        // out very close to the near-black arena floor color, so pixel values are lifted here.
+        // This is a stopgap: it can't lift true zero/near-zero pixels much (multiply of 0 is
+        // still 0), so the real fix is regenerating the art with a lighter palette once
+        // HuggingFace ZeroGPU quota is available again.
+        static readonly Color CharacterBrightnessTint = new Color(1.9f, 1.9f, 1.9f, 1f);
+
         public static void ImportSpriteSheets()
         {
-            ImportSheet("Assets/Sprites/player.png", 128, 8, PixelsPerUnitFor(128, GameConfig.Player.Radius));
-            ImportSheet("Assets/Sprites/enemy-basic.png", 128, 8, PixelsPerUnitFor(128, GameConfig.EnemyBasic.Radius));
-            ImportSheet("Assets/Sprites/enemy-fast.png", 128, 8, PixelsPerUnitFor(128, GameConfig.EnemyFast.Radius));
-            ImportSheet("Assets/Sprites/boss.png", 128, 8, PixelsPerUnitFor(128, GameConfig.Boss.Radius));
+            ImportSheet("Assets/Sprites/player.png", 128, 8, CharacterPixelsPerUnitFor(128, GameConfig.Player.Radius));
+            ImportSheet("Assets/Sprites/enemy-basic.png", 128, 8, CharacterPixelsPerUnitFor(128, GameConfig.EnemyBasic.Radius));
+            ImportSheet("Assets/Sprites/enemy-fast.png", 128, 8, CharacterPixelsPerUnitFor(128, GameConfig.EnemyFast.Radius));
+            ImportSheet("Assets/Sprites/boss.png", 128, 8, CharacterPixelsPerUnitFor(128, GameConfig.Boss.Radius));
             ImportSingle("Assets/Sprites/arrow.png", 128, PixelsPerUnitFor(128, GameConfig.Weapon.ProjectileRadius));
             ImportSingle("Assets/Sprites/medal.png", 128, PixelsPerUnitFor(128, MedalVisualDiameter / 2f));
             ImportBackground("Assets/Sprites/background.png");
@@ -41,6 +61,9 @@ namespace YiSunSin.EditorTools
         // spritePixelsPerUnit such that the sprite renders at diameter = 2 * radius world units,
         // matching js/render.js's drawEntity() convention (see ImportSpriteSheets' comment).
         static float PixelsPerUnitFor(int frameSize, float radius) => frameSize / (2f * radius);
+
+        // Same as PixelsPerUnitFor but scaled up for character visibility (see CharacterVisualScale).
+        static float CharacterPixelsPerUnitFor(int frameSize, float radius) => PixelsPerUnitFor(frameSize, radius) / CharacterVisualScale;
 
         static void ImportSheet(string path, int frameSize, int frameCount, float pixelsPerUnit)
         {
@@ -209,6 +232,7 @@ namespace YiSunSin.EditorTools
         static GameObject BuildEnemyPrefab()
         {
             var go = new GameObject("Enemy", typeof(Rigidbody2D), typeof(CircleCollider2D), typeof(SpriteRenderer), typeof(EnemyController), typeof(SpriteFlipbook));
+            go.GetComponent<SpriteRenderer>().color = CharacterBrightnessTint;
             var controller = go.GetComponent<EnemyController>();
             // One shared prefab represents all 3 enemy types, so every per-type
             // sprite sheet is loaded onto the prefab here; EnemyController.Initialize()
@@ -228,6 +252,7 @@ namespace YiSunSin.EditorTools
             var flipbook = go.GetComponent<SpriteFlipbook>();
             flipbook.Sprites = LoadSpriteSheet("Assets/Sprites/player.png", "player", 8);
             go.GetComponent<SpriteRenderer>().sprite = flipbook.Sprites[0];
+            go.GetComponent<SpriteRenderer>().color = CharacterBrightnessTint;
             var prefab = PrefabUtility.SaveAsPrefabAsset(go, "Assets/Prefabs/Player.prefab");
             Object.DestroyImmediate(go);
             return prefab;

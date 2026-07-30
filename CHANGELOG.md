@@ -8,6 +8,26 @@ pre-1.0 so breaking changes may land in a MINOR bump).
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-07-30
+
+### Fixed
+- Player/enemy/boss sprites were barely visible in play: a player (radius 16) rendered
+  at only ~3.5% of the 900-unit-tall arena view, and the generated art's dark, desaturated
+  palette (RGB ~23,1,4) was nearly indistinguishable from the near-black arena floor
+  (RGB ~16-19). `Global Light 2D`/`BossSpotlight` had zero effect on this since character
+  sprites use the unlit `Sprites/Default` shader.
+- Stopgap fix (full fix needs new art once ZeroGPU quota resets, see Known limitations):
+  character sprites now render at 1.7x their previous size via a new
+  `CharacterPixelsPerUnitFor` import path (`Assets/Editor/ProjectBootstrap.cs`) that scales
+  the sprite only - `CircleCollider2D.radius` (and therefore hitboxes/gameplay) is untouched.
+  Also applied a `Color(1.9, 1.9, 1.9, 1)` brightening tint to Player/Enemy `SpriteRenderer`s.
+  Projectile/pickup icons keep their exact 1:1 diameter-matches-radius sizing.
+
+### Known limitations
+- The brightening tint is a multiply, so it can't lift true near-black pixels much. Real
+  fix is regenerating player/enemy/boss art with a lighter palette once HuggingFace
+  ZeroGPU quota is available again (same blocker as arrow.png/medal.png, see 0.1.0).
+
 ## [0.1.1] - 2026-07-30
 
 ### Fixed
