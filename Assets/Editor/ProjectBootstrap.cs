@@ -317,12 +317,26 @@ namespace YiSunSin.EditorTools
             Object.DestroyImmediate(background.GetComponent<Collider>());
             background.transform.localScale = new Vector3(GameConfig.ArenaWidth, GameConfig.ArenaHeight, 1f);
             background.transform.position = new Vector3(0f, 0f, 1f);
+            // GameObject.CreatePrimitive() leaves Unity's builtin "Default-Material" assigned
+            // (the Standard/lit primitive material) unless explicitly replaced. That material
+            // is lit and picks up ambient/skybox reflection, which on a huge flat quad seen
+            // through an orthographic camera renders as a smooth, wrong-looking radial gradient
+            // across the whole arena floor instead of a flat painted color - found during Task
+            // 16's automated playtest screenshots (every "bare gameplay" capture showed this
+            // gradient where the arena should be) and confirmed by checking this quad's material
+            // reference directly in the saved scene (fileID 10303 = builtin Default-Material).
+            // Sprites/Default is unlit (matches Player/Enemy/Projectile, which already use it and
+            // were never affected), so this makes the background immune to ambient/skybox
+            // reflection and renders as the intended flat tone.
             var backgroundMaterial = new Material(Shader.Find("Sprites/Default")) { color = Color.white };
             var backgroundSprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/background.png");
             if (backgroundSprite != null)
                 backgroundMaterial.mainTexture = backgroundSprite.texture;
             else
-                Debug.LogWarning("BuildMainScene: Assets/Sprites/background.png not found, background will render as flat white.");
+            {
+                backgroundMaterial.color = new Color(0.16f, 0.18f, 0.22f); // moonlit-deck tone fallback
+                Debug.LogWarning("BuildMainScene: Assets/Sprites/background.png not found, background will render as flat color.");
+            }
             background.GetComponent<MeshRenderer>().sharedMaterial = backgroundMaterial;
 
             var playerInstance = (GameObject)PrefabUtility.InstantiatePrefab(playerPrefab);
