@@ -188,5 +188,9 @@ MonoBehaviour:
   - {fileID: 7388399842426930641, guid: d6b59abed1dc45d4392f68f0ef5d93de, type: 3}
   - {fileID: 6757282713640645180, guid: d6b59abed1dc45d4392f68f0ef5d93de, type: 3}
   - {fileID: -6781412095145881161, guid: d6b59abed1dc45d4392f68f0ef5d93de, type: 3}
+  - {fileID: 1755772209161902963, guid: d6b59abed1dc45d4392f68f0ef5d93de, type: 3}
+  - {fileID: 5865078278364869351, guid: d6b59abed1dc45d4392f68f0ef5d93de, type: 3}
+  - {fileID: -2023923573111878767, guid: d6b59abed1dc45d4392f68f0ef5d93de, type: 3}
+  - {fileID: -540375121143967267, guid: d6b59abed1dc45d4392f68f0ef5d93de, type: 3}
   FrameRate: 8
   IsMoving: 0

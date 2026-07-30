@@ -1,7 +1,19 @@
 fileFormatVersion: 2
 guid: f4614357abaf29d44b62c9ed6e8be8b5
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -5436835472725075161
+    second: enemy-fast_4
+  - first:
+      213: -2250739815875107618
+    second: enemy-fast_5
+  - first:
+      213: -4401240925353192408
+    second: enemy-fast_6
+  - first:
+      213: -2767323965609485029
+    second: enemy-fast_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -34,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 3.4285715
+  spritePixelsToUnits: 4.571429
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -115,8 +127,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 96
-        height: 96
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,10 +147,10 @@ TextureImporter:
       name: enemy-fast_1
       rect:
         serializedVersion: 2
-        x: 96
+        x: 128
         y: 0
-        width: 96
-        height: 96
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -157,10 +169,10 @@ TextureImporter:
       name: enemy-fast_2
       rect:
         serializedVersion: 2
-        x: 192
+        x: 256
         y: 0
-        width: 96
-        height: 96
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,10 +191,10 @@ TextureImporter:
       name: enemy-fast_3
       rect:
         serializedVersion: 2
-        x: 288
+        x: 384
         y: 0
-        width: 96
-        height: 96
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,6 +205,94 @@ TextureImporter:
       bones: []
       spriteID: 96aa7f641241ede10800000000000000
       internalID: 2224237399124716137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy-fast_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72b9af171fa7c84b0800000000000000
+      internalID: -5436835472725075161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy-fast_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed4afe8ff04c3c0e0800000000000000
+      internalID: -2250739815875107618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy-fast_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 824596972b6abe2c0800000000000000
+      internalID: -4401240925353192408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy-fast_7
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1ddb63e38d7899d0800000000000000
+      internalID: -2767323965609485029
       vertices: []
       indices: 
       edges: []
@@ -215,6 +315,10 @@ TextureImporter:
       enemy-fast_1: 4697836554961954073
       enemy-fast_2: -6638339438887449833
       enemy-fast_3: 2224237399124716137
+      enemy-fast_4: -5436835472725075161
+      enemy-fast_5: -2250739815875107618
+      enemy-fast_6: -4401240925353192408
+      enemy-fast_7: -2767323965609485029
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

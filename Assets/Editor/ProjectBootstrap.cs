@@ -28,12 +28,13 @@ namespace YiSunSin.EditorTools
 
         public static void ImportSpriteSheets()
         {
-            ImportSheet("Assets/Sprites/player.png", 96, 4, PixelsPerUnitFor(96, GameConfig.Player.Radius));
-            ImportSheet("Assets/Sprites/enemy-basic.png", 96, 4, PixelsPerUnitFor(96, GameConfig.EnemyBasic.Radius));
-            ImportSheet("Assets/Sprites/enemy-fast.png", 96, 4, PixelsPerUnitFor(96, GameConfig.EnemyFast.Radius));
-            ImportSheet("Assets/Sprites/boss.png", 128, 4, PixelsPerUnitFor(128, GameConfig.Boss.Radius));
-            ImportSingle("Assets/Sprites/arrow.png", 96, PixelsPerUnitFor(96, GameConfig.Weapon.ProjectileRadius));
-            ImportSingle("Assets/Sprites/medal.png", 96, PixelsPerUnitFor(96, MedalVisualDiameter / 2f));
+            ImportSheet("Assets/Sprites/player.png", 128, 8, PixelsPerUnitFor(128, GameConfig.Player.Radius));
+            ImportSheet("Assets/Sprites/enemy-basic.png", 128, 8, PixelsPerUnitFor(128, GameConfig.EnemyBasic.Radius));
+            ImportSheet("Assets/Sprites/enemy-fast.png", 128, 8, PixelsPerUnitFor(128, GameConfig.EnemyFast.Radius));
+            ImportSheet("Assets/Sprites/boss.png", 128, 8, PixelsPerUnitFor(128, GameConfig.Boss.Radius));
+            ImportSingle("Assets/Sprites/arrow.png", 128, PixelsPerUnitFor(128, GameConfig.Weapon.ProjectileRadius));
+            ImportSingle("Assets/Sprites/medal.png", 128, PixelsPerUnitFor(128, MedalVisualDiameter / 2f));
+            ImportBackground("Assets/Sprites/background.png");
             AssetDatabase.Refresh();
         }
 
@@ -48,7 +49,7 @@ namespace YiSunSin.EditorTools
 
             importer.textureType = TextureImporterType.Sprite;
             importer.spriteImportMode = SpriteImportMode.Multiple;
-            importer.filterMode = FilterMode.Point;
+            importer.filterMode = FilterMode.Bilinear;
             importer.spritePixelsPerUnit = pixelsPerUnit;
 
             var metas = new SpriteMetaData[frameCount];
@@ -72,8 +73,20 @@ namespace YiSunSin.EditorTools
 
             importer.textureType = TextureImporterType.Sprite;
             importer.spriteImportMode = SpriteImportMode.Single;
-            importer.filterMode = FilterMode.Point;
+            importer.filterMode = FilterMode.Bilinear;
             importer.spritePixelsPerUnit = pixelsPerUnit;
+            EditorUtility.SetDirty(importer);
+            importer.SaveAndReimport();
+        }
+
+        static void ImportBackground(string path)
+        {
+            var importer = (TextureImporter)AssetImporter.GetAtPath(path);
+            if (importer == null) { Debug.LogWarning($"Missing sprite: {path}"); return; }
+
+            importer.textureType = TextureImporterType.Sprite;
+            importer.spriteImportMode = SpriteImportMode.Single;
+            importer.filterMode = FilterMode.Bilinear;
             EditorUtility.SetDirty(importer);
             importer.SaveAndReimport();
         }
@@ -201,9 +214,9 @@ namespace YiSunSin.EditorTools
             // sprite sheet is loaded onto the prefab here; EnemyController.Initialize()
             // then selects the correct array (by TypeId) and wires it into the
             // SpriteFlipbook + SpriteRenderer at spawn time.
-            controller.BasicSprites = LoadSpriteSheet("Assets/Sprites/enemy-basic.png", "enemy-basic", 4);
-            controller.FastSprites = LoadSpriteSheet("Assets/Sprites/enemy-fast.png", "enemy-fast", 4);
-            controller.BossSprites = LoadSpriteSheet("Assets/Sprites/boss.png", "boss", 4);
+            controller.BasicSprites = LoadSpriteSheet("Assets/Sprites/enemy-basic.png", "enemy-basic", 8);
+            controller.FastSprites = LoadSpriteSheet("Assets/Sprites/enemy-fast.png", "enemy-fast", 8);
+            controller.BossSprites = LoadSpriteSheet("Assets/Sprites/boss.png", "boss", 8);
             var prefab = PrefabUtility.SaveAsPrefabAsset(go, "Assets/Prefabs/Enemy.prefab");
             Object.DestroyImmediate(go);
             return prefab;
@@ -213,7 +226,7 @@ namespace YiSunSin.EditorTools
         {
             var go = new GameObject("Player", typeof(Rigidbody2D), typeof(CircleCollider2D), typeof(SpriteRenderer), typeof(PlayerController), typeof(SpriteFlipbook));
             var flipbook = go.GetComponent<SpriteFlipbook>();
-            flipbook.Sprites = LoadSpriteSheet("Assets/Sprites/player.png", "player", 4);
+            flipbook.Sprites = LoadSpriteSheet("Assets/Sprites/player.png", "player", 8);
             go.GetComponent<SpriteRenderer>().sprite = flipbook.Sprites[0];
             var prefab = PrefabUtility.SaveAsPrefabAsset(go, "Assets/Prefabs/Player.prefab");
             Object.DestroyImmediate(go);
@@ -314,8 +327,16 @@ namespace YiSunSin.EditorTools
             // reference directly in the saved scene (fileID 10303 = builtin Default-Material).
             // Sprites/Default is unlit (matches Player/Enemy/Projectile, which already use it and
             // were never affected), so this makes the background immune to ambient/skybox
-            // reflection and renders as the intended flat, dim moonlit-deck tone.
-            var backgroundMaterial = new Material(Shader.Find("Sprites/Default")) { color = new Color(0.16f, 0.18f, 0.22f) };
+            // reflection and renders as the intended flat tone.
+            var backgroundMaterial = new Material(Shader.Find("Sprites/Default")) { color = Color.white };
+            var backgroundSprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/background.png");
+            if (backgroundSprite != null)
+                backgroundMaterial.mainTexture = backgroundSprite.texture;
+            else
+            {
+                backgroundMaterial.color = new Color(0.16f, 0.18f, 0.22f); // moonlit-deck tone fallback
+                Debug.LogWarning("BuildMainScene: Assets/Sprites/background.png not found, background will render as flat color.");
+            }
             background.GetComponent<MeshRenderer>().sharedMaterial = backgroundMaterial;
 
             var playerInstance = (GameObject)PrefabUtility.InstantiatePrefab(playerPrefab);
